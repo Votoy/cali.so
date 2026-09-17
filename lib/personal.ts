@@ -1,5 +1,5 @@
 // The personal registry — the one file to edit when life moves on.
-// Sources: legacy site resume data + posts; see docs/handoff.md.
+// Sources: site resume data + posts; see docs/handoff.md.
 
 export interface Experience {
   company: string
@@ -11,12 +11,8 @@ export interface Experience {
   url?: string
 }
 
-export const experience: Experience[] = [
-  { company: '佐玩 Zolplay', companyEn: 'Zolplay', role: '创始人 & 创意总监', roleEn: 'Founder & Creative Director', from: 2021, url: 'https://zolplay.com' },
-  { company: 'very very spaceship', companyEn: 'very very spaceship', role: '软件工程师 II', roleEn: 'Software Engineer II', from: 2018, to: 2020 },
-  { company: '8ninths', companyEn: '8ninths', role: '全栈与 AR 工程师', roleEn: 'Full-stack & AR Engineer', from: 2017, to: 2018 },
-  { company: 'Abletive 电子音乐社区', companyEn: 'Abletive', role: '创始人 & 独立开发者', roleEn: 'Founder & indie dev', from: 2014, to: 2016 },
-]
+// TODO(Marvin): add experience entries when ready.
+export const experience: Experience[] = []
 
 export interface Record_ {
   artist: string
@@ -31,6 +27,7 @@ export interface Record_ {
 }
 
 // 定番唱片 — spine colors are sampled once from the local cover art.
+// Kept as placeholder taste data; replace with Marvin's picks later.
 export const records: Record_[] = [
   { artist: 'Avicii', album: 'TIM', year: 2019, genre: 'Dance', spineColor: '#8f8a89', spineInk: '#171717', art: '/images/records/tim.jpg', url: 'https://music.apple.com/us/album/tim/1462628887' },
   { artist: 'J. Cole', album: 'The Fall-Off', year: 2026, genre: 'Hip-Hop/Rap', spineColor: '#a07e75', spineInk: '#171717', art: '/images/records/the-fall-off.jpg', url: 'https://music.apple.com/us/album/the-fall-off/1875080726' },
@@ -67,7 +64,7 @@ export interface Book {
   url?: string
 }
 
-// 书架 — ordered by relevance to Cali's design, creative, and founder work.
+// 书架 — placeholder shelf; replace with Marvin's picks later.
 export const books: Book[] = [
   { title: 'Grid Systems in Graphic Design', spineTitle: 'Grid Systems', spineAuthor: 'JMB', author: 'Josef Müller-Brockmann', year: 1981, category: 'Graphic Design', spineColor: '#df6029', spineInk: '#171717', art: '/images/books/grid-systems.jpg', coverWidth: 411, coverHeight: 600, spine: 24, url: 'https://niggli.ch/en/products/rastersysteme-fur-die-visuelle-gestaltung' },
   { title: 'Refactoring UI', spineAuthor: 'AW+SS', author: 'Adam Wathan & Steve Schoger', year: 2018, category: 'UI Design', spineColor: '#2e3849', spineInk: '#f7f4ed', art: '/images/books/refactoring-ui.jpg', coverWidth: 758, coverHeight: 1014, spine: 24, url: 'https://refactoringui.com/' },
