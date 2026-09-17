@@ -2,16 +2,16 @@
 
 import { useEffect, useState } from 'react'
 
-const taipeiClockTime = new Intl.DateTimeFormat('en-GB', {
-  timeZone: 'Asia/Taipei',
+const chengduClockTime = new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'Asia/Shanghai',
   hourCycle: 'h23',
   hour: '2-digit',
   minute: '2-digit',
   second: '2-digit',
 })
 
-const taipeiTimeLabel = new Intl.DateTimeFormat('en-US', {
-  timeZone: 'Asia/Taipei',
+const chengduTimeLabel = new Intl.DateTimeFormat('en-US', {
+  timeZone: 'Asia/Shanghai',
   hour12: true,
   hour: 'numeric',
   minute: '2-digit',
@@ -21,7 +21,7 @@ function timeParts(date: Date | null) {
   if (!date) return { hour: 0, minute: 0, second: 0, label: '--:-- --' }
 
   const parts = Object.fromEntries(
-    taipeiClockTime
+    chengduClockTime
       .formatToParts(date)
       .filter((part) => part.type !== 'literal')
       .map((part) => [part.type, part.value]),
@@ -34,7 +34,7 @@ function timeParts(date: Date | null) {
     hour,
     minute,
     second,
-    label: taipeiTimeLabel.format(date),
+    label: chengduTimeLabel.format(date),
   }
 }
 
@@ -113,7 +113,9 @@ export function FooterClock() {
         <time
           dateTime={now?.toISOString()}
           aria-label={
-            now ? `Current time in Taipei, UTC+8: ${label}` : 'Current time in Taipei, UTC+8'
+            now
+              ? `Current time in Chengdu, UTC+8: ${label}`
+              : 'Current time in Chengdu, UTC+8'
           }
         >
           {label}

@@ -7,9 +7,6 @@ import {
   GitHubCard,
   type GitHubSnapshot,
   type SocialSnapshot,
-  TelegramCard,
-  XCard,
-  YouTubeCard,
 } from '~/components/social-cards'
 import { brailleText } from '~/lib/braille'
 import { T } from '~/lib/i18n'
@@ -41,9 +38,6 @@ async function CopyrightYear() {
   return new Date().getFullYear()
 }
 
-// Swiss editorial footer, set as folder trees: each column is a directory
-// listing with box-drawing connectors; the controls in 偏好 fill the
-// column width (auto on mobile).
 export function SiteFooter({
   social,
   github,
@@ -53,24 +47,17 @@ export function SiteFooter({
   github: GitHubSnapshot
   locale?: Locale
 }) {
+  void social
+
   return (
     <footer className="mx-auto mt-24 w-full max-w-[37.5rem] px-6 pb-24 text-sm text-muted-foreground sm:pb-12">
       <div className="hairline-top grid grid-cols-2 gap-x-6 gap-y-8 pt-8 sm:grid-cols-3">
         <Tree zh="联系" en="contact">
           <li>
-            <XCard data={social.x} />
-          </li>
-          <li>
-            <TelegramCard data={social.telegram} />
-          </li>
-          <li>
-            <YouTubeCard data={social.youtube} />
-          </li>
-          <li>
             <GitHubCard data={github} />
           </li>
           <li>
-            <EmailCard address="hi@cali.so" />
+            <EmailCard address="li_mengfan@foxmail.com" />
           </li>
         </Tree>
         <Tree zh="索引" en="index">
@@ -111,16 +98,14 @@ export function SiteFooter({
         <div className="footer-colophon col-span-2 sm:order-first sm:col-span-1">
           <div>
             <p>
-              © <CopyrightYear /> Cali Castle
+              © <CopyrightYear /> Marvin
             </p>
-            {/* the name echoed in braille — a printer's mark on the sheet */}
             <p className="footer-braille" aria-hidden>
-              {brailleText('cali castle')}
+              {brailleText('marvin')}
             </p>
           </div>
           <div className="flex flex-col gap-2.5">
             <FooterClock />
-            {/* geo stamp: the colophon's location line, a decorative twin of the clock */}
             <div className="footer-geo" aria-hidden>
               <svg className="footer-geo-globe" viewBox="0 0 20 20">
                 <circle cx="10" cy="10" r="9" />
@@ -128,8 +113,8 @@ export function SiteFooter({
                 <path d="M1 10h18M1.9 6h16.2M1.9 14h16.2" />
               </svg>
               <span className="footer-geo-lines">
-                <span>22.4820° N</span>
-                <span>113.9247° E</span>
+                <span>30.5728° N</span>
+                <span>104.0668° E</span>
               </span>
             </div>
           </div>
