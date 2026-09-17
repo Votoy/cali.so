@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { Suspense } from 'react'
 
-import { BookShelf } from '~/components/book-shelf'
-import { ExternalLabel } from '~/components/external-label'
+import { Bookshelf } from '~/components/bookshelf'
+import { ExternalLabel } from '~/components/external-mark'
 import { HalftonePortrait } from '~/components/halftone-portrait'
 import { HomeIntroduction } from '~/components/home-introduction'
 import { NavCards, PhotoNavCard } from '~/components/nav-cards'
@@ -190,7 +190,7 @@ export async function HomePageView({ locale }: { locale: Locale }) {
             <T zh="珍藏书架" en="Books I Love" />
           </SectionTitle>
           <div className="enter mt-5" style={{ '--enter-delay': '420ms' } as React.CSSProperties}>
-            <BookShelf />
+            <Bookshelf />
           </div>
         </section>
       )}
