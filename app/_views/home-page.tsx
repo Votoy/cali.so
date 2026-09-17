@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { Suspense } from 'react'
 
-import { Bookshelf } from '~/components/bookshelf'
-import { ExternalLabel } from '~/components/external-mark'
+import { BookShelf } from '~/components/book-shelf'
+import { ExternalLabel } from '~/components/external-label'
 import { HalftonePortrait } from '~/components/halftone-portrait'
 import { HomeIntroduction } from '~/components/home-introduction'
 import { NavCards, PhotoNavCard } from '~/components/nav-cards'
@@ -57,7 +57,7 @@ export async function HomePageView({ locale }: { locale: Locale }) {
       <div className="flex flex-col-reverse justify-between gap-10 sm:flex-row sm:items-start">
         <div className="enter max-w-[19rem]">
           <div className="flex items-center gap-2">
-            <h1 className="text-base font-semibold tracking-tight text-foreground">Cali Castle</h1>
+            <h1 className="text-base font-semibold tracking-tight text-foreground">Marvin</h1>
             <PixelCluster variant={2} className="shrink-0" />
           </div>
           <div className="mt-4">
@@ -68,15 +68,15 @@ export async function HomePageView({ locale }: { locale: Locale }) {
           <PortraitHiddenStage
             label={
               locale === 'en'
-                ? "Cali's halftone portrait. Reveal the hidden topographic field"
-                : 'Cali 的半调网点肖像。显现隐藏的等高线场'
+                ? "Marvin's halftone portrait placeholder. Replace public/images headshot later"
+                : 'Marvin 的半调网点肖像占位。稍后请替换 public/images 头像'
             }
           >
             <HalftonePortrait
               srcLight="/images/headshot.jpg"
               srcDark="/images/portrait-square.jpg"
-              alt="Cali 的半调网点肖像"
-              altEn="Cali's halftone portrait"
+              alt="Marvin 的半调网点肖像（占位）"
+              altEn="Marvin's halftone portrait (placeholder)"
             />
           </PortraitHiddenStage>
         </div>
@@ -101,47 +101,49 @@ export async function HomePageView({ locale }: { locale: Locale }) {
         }
       />
 
-      <section className="mt-16">
-        <SectionTitle index={nextSectionIndex()} delay={120}>
-          <T zh="经历" en="Experience" />
-        </SectionTitle>
-        <ul className="mt-4 flex flex-col">
-          {experience.map((job, i) => (
-            <li
-              key={job.company}
-              className="enter-swing hairline-top"
-              style={{ '--enter-delay': `${150 + i * 40}ms` } as React.CSSProperties}
-            >
-              <div className="experience-row text-sm">
-                <div className="experience-details">
-                  {job.url ? (
-                    <a
-                      href={job.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="experience-company font-medium transition-colors duration-150 ease-[ease] hover:text-foreground"
-                    >
-                      <ExternalLabel>
+      {experience.length > 0 && (
+        <section className="mt-16">
+          <SectionTitle index={nextSectionIndex()} delay={120}>
+            <T zh="经历" en="Experience" />
+          </SectionTitle>
+          <ul className="mt-4 flex flex-col">
+            {experience.map((job, i) => (
+              <li
+                key={job.company}
+                className="enter-swing hairline-top"
+                style={{ '--enter-delay': `${150 + i * 40}ms` } as React.CSSProperties}
+              >
+                <div className="experience-row text-sm">
+                  <div className="experience-details">
+                    {job.url ? (
+                      <a
+                        href={job.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="experience-company font-medium transition-colors duration-150 ease-[ease] hover:text-foreground"
+                      >
+                        <ExternalLabel>
+                          <T zh={job.company} en={job.companyEn} />
+                        </ExternalLabel>
+                      </a>
+                    ) : (
+                      <span className="experience-company font-medium">
                         <T zh={job.company} en={job.companyEn} />
-                      </ExternalLabel>
-                    </a>
-                  ) : (
-                    <span className="experience-company font-medium">
-                      <T zh={job.company} en={job.companyEn} />
+                      </span>
+                    )}
+                    <span className="experience-role text-muted-foreground">
+                      <T zh={job.role} en={job.roleEn ?? job.role} />
                     </span>
-                  )}
-                  <span className="experience-role text-muted-foreground">
-                    <T zh={job.role} en={job.roleEn ?? job.role} />
+                  </div>
+                  <span className="experience-date text-muted-foreground tabular-nums">
+                    {job.from}—{job.to ?? <T zh="现在" en="now" />}
                   </span>
                 </div>
-                <span className="experience-date text-muted-foreground tabular-nums">
-                  {job.from}—{job.to ?? <T zh="现在" en="now" />}
-                </span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="mt-16">
         <div className="flex items-center justify-between gap-4">
@@ -188,7 +190,7 @@ export async function HomePageView({ locale }: { locale: Locale }) {
             <T zh="珍藏书架" en="Books I Love" />
           </SectionTitle>
           <div className="enter mt-5" style={{ '--enter-delay': '420ms' } as React.CSSProperties}>
-            <Bookshelf />
+            <BookShelf />
           </div>
         </section>
       )}
