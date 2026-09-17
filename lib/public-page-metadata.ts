@@ -1,56 +1,54 @@
 export const publicPageMetadata = {
   home: {
     zh: {
-      title: 'Cali Castle',
-      description: '设计工程师、Agent 指挥官、创意总监。',
-      ogDescription: '设计工程师、Agent 指挥官、创意总监。',
+      title: 'Marvin',
+      description: 'Li Mn V 其实是三种化学元素。',
+      ogDescription: '我是 Marvin，定居成都，ENTJ。我喜欢把想法做成东西。',
     },
     en: {
-      title: 'Cali Castle',
-      description: 'Design Engineer. Agent Orchestrator. Creative Director.',
-      ogDescription: 'Design Engineer. Agent Orchestrator. Creative Director.',
+      title: 'Marvin',
+      description: 'Li Mn V is actually three chemical elements.',
+      ogDescription:
+        'I am Marvin, based in Chengdu, ENTJ. I like turning ideas into things.',
     },
   },
   blog: {
     zh: {
       title: '写作',
-      description: 'Cali 关于设计、工程、产品，以及一路上在意的人和事的文章。',
+      description: 'Marvin 关于生活、摄影与 AI 的文字。',
     },
     en: {
       title: 'Writing',
-      description:
-        'Essays by Cali about design, engineering, products, and the people and ideas that matter along the way.',
+      description: 'Notes by Marvin on life, photography, and AI.',
     },
   },
   photos: {
-    zh: { title: '照片', description: 'Cali 在工作、生活和旅途中留下的一些瞬间。' },
+    zh: { title: '照片', description: 'Marvin 在生活与旅途中留下的一些瞬间。' },
     en: {
       title: 'Photos',
-      description: 'Moments Cali has kept from work, life, and everywhere in between.',
+      description: 'Moments Marvin has kept from life and travel.',
     },
   },
   projects: {
     zh: {
       title: '项目',
-      description:
-        '这些年做过的产品、开源工具和小实验。有些实用，有些只是好玩，但每一个我都认真做过。',
+      description: '做过的项目与正在推进的实验。有些已完成，有些还在路上。',
     },
     en: {
       title: 'Projects',
       description:
-        'Products, open-source tools, and small experiments I have made over the years. Some useful, some playful, all made with care.',
+        'Things I have built and experiments still in progress. Some finished, some underway.',
     },
   },
   ama: {
     zh: {
       title: '一对一',
-      description:
-        '从产品设计、工程、职业到独立开发、创业、出海、英语学习与 AI 工作流，用一小时聊清楚怎么判断、怎么取舍、下一步做什么。',
+      description: '聊聊项目、摄影、AI，以及把想法做成东西的过程。',
     },
     en: {
       title: 'AMA',
       description:
-        'A one-to-one conversation about AI-native work, product strategy, engineering, startups, career moves, and building products.',
+        'A one-to-one conversation about projects, photography, AI, and making things.',
     },
   },
 } as const

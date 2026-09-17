@@ -57,8 +57,8 @@ export function localeMetadata({
       path === '/'
         ? `${title}${sentenceSeparator}${description}`
         : SECTION_IMAGE_PATHS.has(path)
-          ? `${title} · Cali Castle${sentenceSeparator}${description}`
-        : `${title} · Cali Castle`,
+          ? `${title} · Marvin${sentenceSeparator}${description}`
+          : `${title} · Marvin`,
     type: 'image/png',
   }
 
@@ -74,7 +74,7 @@ export function localeMetadata({
       description,
       type,
       locale: locale === 'en' ? 'en_US' : 'zh_CN',
-      siteName: 'Cali Castle',
+      siteName: 'Marvin',
       url: canonical,
       images: [image],
     },
